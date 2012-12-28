@@ -1,0 +1,32 @@
+#!/bin/sh
+FD_FILE=${1}
+FD_ROOT=${2-.}
+
+if [ -z "${FD_FILE}" ]; then
+    echo "Missing required filename argument"
+    # shoot, I'm running this with source
+    # so if i exit then i really exit
+    #exit 1
+fi
+
+FD_DIR=( $( find -L "${FD_ROOT}" -wholename "*${FD_FILE}*" -printf "%h\n" ) )
+
+if [ -z "${FD_DIR}" ]; then
+    echo "Unable to find file"
+    #exit 1
+elif [ "${#FD_DIR[*]}" -gt 1 ]; then
+    echo "Found ${#FD_DIR[*]} directories containing filename [${FD_FILE}]:"
+
+    for directory in ${FD_DIR[@]}
+    do
+        echo "  ${directory}"
+    done
+
+    #exit 2
+else
+    echo "Changing to directory ${FD_DIR}"
+    cd "${FD_DIR}"
+fi
+
+
+

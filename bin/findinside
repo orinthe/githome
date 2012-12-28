@@ -1,0 +1,13 @@
+#!/bin/sh
+FIN_STRING=${1}
+
+# added a default so this should never get triggered
+if [ -z "${FIN_STRING}" ]; then
+    echo "Missing required search string argument"
+    exit 1
+fi
+
+find . -type f -print0 | xargs -0 egrep -n "${FIN_STRING}"
+
+exit
+

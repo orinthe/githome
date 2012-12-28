@@ -1,0 +1,24 @@
+#!/bin/sh
+VF_FILE=${1}
+VF_ROOT=${2-.}
+
+if [ -z "${VF_FILE}" ]; then
+    echo "Missing required filename argument"
+    exit 1
+fi
+
+VF_FILES=( $( find "${VF_ROOT}" -name "${VF_FILE}" -type f ) )
+
+if [ -z "${VF_FILES}" ]; then
+    echo "Unable to find file"
+    exit 1
+elif [ "${#VF_FILES[*]}" -gt 1 ]; then
+    read -n 1 -p "Found ${#VF_FILES[*]} files, open them all [Y/n]? "
+    if [ "${REPLY}" == 'n' ]; then 
+        exit 1
+    fi # user didn't say no so fall out of this if and open all files
+fi
+
+vi ${VF_FILES[@]}
+
+

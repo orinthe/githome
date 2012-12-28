@@ -1,0 +1,14 @@
+#!/bin/sh
+FF_FILE=${1-\*}
+FF_ROOT=${2-.}
+
+# added a default so this should never get triggered
+if [ -z "${FF_FILE}" ]; then
+    echo "Missing required filename argument"
+    exit 1
+fi
+
+find -L "${FF_ROOT}" -iname "${FF_FILE}"
+
+exit
+
