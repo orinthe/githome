@@ -18,13 +18,9 @@ promptinit
 # Allow for functions in the prompt.
 setopt PROMPT_SUBST
  
-# Crappy function to get my IP address
-function get_ip {
-  /sbin/ifconfig -u | /usr/bin/awk '{ if ( $1 == "inet" && $2 != "127.0.0.1" ) print $2 }'
-}
+PROMPT='%n%(!.#.$) '
 
-PROMPT='%n@%m%(!.#.$) '
-RPROMPT='$(get_ip):%~'
-
-
+# I use `hostname -s` isntead of %m/%M because the latter seems to only get
+# updated when the shell is started, but DHCP updates my hostname all the time
+RPROMPT='$(hostname -s):%~'
 
