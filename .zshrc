@@ -13,7 +13,17 @@ alias vf="noglob vifile"
 autoload -U compinit promptinit
 compinit
 promptinit
+
+# Allow for functions in the prompt.
+setopt PROMPT_SUBST
  
-PROMPT='%n%(!.#.$) '
-RPROMPT='%d on %m'
+# Crappy function to get my IP address
+function get_ip {
+  ifconfig -u | awk '{ if ( $1 == "inet" && $2 != "127.0.0.1" ) print $2 }'
+}
+
+PROMPT='%n@%m%(!.#.$) '
+RPROMPT='$(get_ip):%~'
+
+
 
