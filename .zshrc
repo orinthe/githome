@@ -9,6 +9,7 @@ alias fin="noglob findinside"
 alias ud="source upd"
 alias cf="source cdtofile"
 alias vf="noglob vifile"
+alias scm="./scm"
 
 autoload -U compinit promptinit
 compinit
