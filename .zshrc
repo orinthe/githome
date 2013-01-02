@@ -20,7 +20,7 @@ setopt PROMPT_SUBST
  
 # Crappy function to get my IP address
 function get_ip {
-  ifconfig -u | awk '{ if ( $1 == "inet" && $2 != "127.0.0.1" ) print $2 }'
+  /sbin/ifconfig -u | /usr/bin/awk '{ if ( $1 == "inet" && $2 != "127.0.0.1" ) print $2 }'
 }
 
 PROMPT='%n@%m%(!.#.$) '
