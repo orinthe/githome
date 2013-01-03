@@ -1,6 +1,15 @@
 export PATH="${PATH}:/opt/local/bin/:${HOME}/bin"
 export CLICOLOR=1
 
+# history
+HISTFILE=$HOME/.zhistory        # enable history saving on shell exit
+HISTSIZE=1200                   # lines of history to maintain memory
+SAVEHIST=1000                   # lines of history to maintain in history file.
+setopt INC_APPEND_HISTORY       # append rather than overwrite history file.
+setopt SHARE_HISTORY            # share history among all sessions
+setopt HIST_EXPIRE_DUPS_FIRST   # allow dups, but expire old ones when I hit HISTSIZE
+setopt EXTENDED_HISTORY         # save timestamp and runtime information
+
 # set up aliases
 alias zshrc="source $HOME/.zshrc"
 alias ll="ls -Alh"
