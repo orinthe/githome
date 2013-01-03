@@ -3,13 +3,16 @@ export CLICOLOR=1
 
 # set up aliases
 alias zshrc="source $HOME/.zshrc"
-
+alias ll="ls -Alh"
 alias ff="noglob findfile"
 alias fin="noglob findinside"
 alias ud="source upd"
 alias cf="source cdtofile"
 alias vf="noglob vifile"
 alias scm="./scm"
+alias dash="javaws http://dash.cac.washington.edu/Dash-production/Dash.jnlp"
+
+fpath=(~/.zsh/completion $fpath)
 
 autoload -U compinit promptinit
 compinit
