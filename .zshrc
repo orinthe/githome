@@ -34,5 +34,5 @@ PROMPT='%n%(!.#.$) '
 
 # I use `hostname` isntead of %m/%M because the latter seems to only get
 # updated when the shell is started, but DHCP updates my hostname all the time
-RPROMPT='$(hostname):%~'
+RPROMPT='$(hostname):%d'
 
