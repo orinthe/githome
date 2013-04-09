@@ -1,0 +1,12 @@
+#!/bin/sh
+SSHFS_REMOTE=${1}
+
+if [ -z "${SSHFS_REMOTE}" ]; then
+    echo "Missing required filename argument"
+    exit 1
+fi
+
+mkdir -p /Volumes/${SSHFS_REMOTE}
+
+sshfs ${SSHFS_REMOTE}:/ /Volumes/${SSHFS_REMOTE} -oauto_cache,reconnect,defer_permissions,noappledouble,negative_vncache,transform_symlinks,follow_symlinks,volname=${SSHFS_REMOTE}
+
