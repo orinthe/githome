@@ -1,4 +1,5 @@
 export PATH="${PATH}:/opt/local/bin/:${HOME}/bin"
+export PERL5LIB="$HOME/site_perl/lib/perl5:${PERL5LIB}"
 export CLICOLOR=1
 
 # history
@@ -18,7 +19,6 @@ alias fin="noglob findinside"
 alias ud="source upd"
 alias cf="source cdtofile"
 alias vf="noglob vifile"
-alias scm="./scm"
 alias dash="javaws http://dash.cac.washington.edu/Dash-production/Dash.jnlp"
 
 fpath=(~/.zsh/completion $fpath)

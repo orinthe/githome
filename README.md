@@ -4,8 +4,7 @@
 Installation
 ------------
 
-    cd ~
+    pushd ~
     git clone ssh://git@bitbucket.org/ekoniak/githome.git
-    setopt -4; for FILE in home.git/*; do ln -s $FILE; done; setopt +4
-    rm .git README.md
-    
+    setopt GLOB_DOTS EXTENDED_GLOB; for FILE in githome/*~githome/.git~githome/README.md; do ln -s $FILE; done; unsetopt GLOB_DOTS EXTENDED_GLOB 
+    popd
