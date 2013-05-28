@@ -1,6 +1,18 @@
 export PATH="${PATH}:/opt/local/bin/:${HOME}/bin"
-export PERL5LIB="$HOME/site_perl/lib/perl5:${PERL5LIB}"
 export CLICOLOR=1
+export PERL5LIB=\
+$HOME/site_perl/lib/perl5\
+:/netops/lib/perl5/site_perl\
+:/netops/lib/perl5/site_perl/5.005\
+:/netops/lib/perl5/site_perl/soap_modules\
+:/netops/lib/perl5/local_perl
+
+export PYTHONPATH=\
+/netops/lib/python2.6/nmt-packages\
+:/netops/lib/python2.6/site-packages\
+:/netops/lib/python/nmt-packages\
+:/netops/lib/python/site-packages
+
 
 # history
 HISTFILE=$HOME/.zhistory        # enable history saving on shell exit
