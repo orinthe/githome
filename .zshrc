@@ -1,4 +1,4 @@
-export PATH="${PATH}:/opt/local/bin/:${HOME}/bin"
+export PATH="${HOME}/bin:/netops/bin:/opt/local/bin:${PATH}"
 export CLICOLOR=1
 export PERL5LIB=\
 $HOME/site_perl/lib/perl5\
