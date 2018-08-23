@@ -13,6 +13,7 @@ setopt EXTENDED_HISTORY         # save timestamp and runtime information
 # no nano, please
 EDITOR=vim
 VISUAL=vim
+GIT_EDITOR=vim
 
 # set up aliases
 alias zshrc="source $HOME/.zshrc"
