@@ -10,6 +10,10 @@ setopt SHARE_HISTORY            # share history among all sessions
 setopt HIST_EXPIRE_DUPS_FIRST   # allow dups, but expire old ones when I hit HISTSIZE
 setopt EXTENDED_HISTORY         # save timestamp and runtime information
 
+# no nano, please
+EDITOR=vim
+VISUAL=vim
+
 # set up aliases
 alias zshrc="source $HOME/.zshrc"
 alias ll="ls -Alh"
